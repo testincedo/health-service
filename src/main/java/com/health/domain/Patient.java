@@ -1,5 +1,5 @@
 
-package com.domain;
+package com.health.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,6 +21,7 @@ public class Patient {
     private Long id;
 
     @Column(nullable = false, length = 64)
+    // Medical Record Number
     private String mrn;
 
     @Column(nullable = false, length = 64)
@@ -30,7 +31,7 @@ public class Patient {
     private String lastName;
 
     @Column(nullable = false, length = 1)
-    private String gender; // M/F/O/U
+    private String gender;
 
     private LocalDate dateOfBirth;
 
