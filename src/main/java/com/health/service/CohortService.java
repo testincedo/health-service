@@ -1,6 +1,7 @@
 
 package com.health.service;
 
+import com.health.request.CohortRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,5 +1,5 @@
 
-package com.health.service;
+package com.health.request;
 
 import lombok.Data;
 

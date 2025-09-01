@@ -1,10 +1,11 @@
 
 package com.health.controller;
 
-import com.health.service.CohortRequest;
+import com.health.request.CohortRequest;
 import com.health.service.CohortService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CohortController {
 
-    private final CohortService cohortService;
+    @Autowired
+    private CohortService cohortService;
 
     @PostMapping("/execute")
     @Operation(summary = "Execute cohort request and return patient ids")
