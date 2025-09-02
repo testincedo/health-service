@@ -5,7 +5,7 @@
 This project implements a Healthcare Analytics Dashboard backend using Spring Boot (Java) and MySQL/H2. It allows healthcare
 institutions to query, filter, and analyze patient and operational data in real-time with minimal latency.
 
-### Core features include:
+### Core features include: 
 
 * Querying patient records with insights like visits, diagnoses, and doctors.
 * Defining and saving patient cohort selection sets.
