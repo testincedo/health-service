@@ -25,3 +25,4 @@ public class CohortController {
         return ResponseEntity.ok(cohortService.createCohort(req));
     }
 }
+

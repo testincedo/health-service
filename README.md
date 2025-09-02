@@ -33,6 +33,16 @@ mvn spring-boot:run`
 Once running, explore APIs at:
 http://localhost:8080/swagger-ui.html
 
+Example: 
+
+/api/v1/patients/search Sample Request to fetch all Male patients in last one year
+
+`{ "genders": [ "M" ], "minVisitsTotal": 0, "minVisitsLast365d": 0, "withinDays": 365 } `
+
+/api/v1/cohorts/execute Sample request to fetch all patientIds on ageBasedCohert 
+
+`{ "name": "Age Based Request", "strategyKey": "ageBasedCohortStrategy", "diseaseCode": "string", "minAge": 0, "maxAge": 99 }`
+
 
 **Database Schema:** resources/data/Database-ER.png
 **Table Structure:** resources/data/DatabaseDesign.txt
