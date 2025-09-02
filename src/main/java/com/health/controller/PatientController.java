@@ -22,7 +22,7 @@ public class PatientController {
     private PatientService patientService;
 
     @PostMapping("/search")
-    @Operation(summary = "Search patients (simple demo implementation)")
+    @Operation(summary = "Search patients")
     public ResponseEntity<Page<PatientSummaryDto>> search(@RequestBody PatientSearchCriteria criteria,
                                                           @RequestParam(defaultValue = "0") int page,
                                                           @RequestParam(defaultValue = "20") int size) {

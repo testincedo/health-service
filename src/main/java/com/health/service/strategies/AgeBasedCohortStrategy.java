@@ -38,6 +38,6 @@ public class AgeBasedCohortStrategy implements CohortStrategy {
 
     @Override
     public String key() {
-        return "ageBased";
+        return "ageBasedCohortStrategy";
     }
 }

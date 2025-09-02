@@ -27,6 +27,6 @@ public class DiseaseBasedCohortStrategy implements CohortStrategy {
 
     @Override
     public String key() {
-        return "diseaseBased";
+        return "diseaseBasedCohortStrategy";
     }
 }
