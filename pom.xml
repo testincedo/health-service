@@ -17,7 +17,7 @@
     <artifactId>health-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>health-service</name>
+    <name>com-service</name>
     <description>Patient Dashboard service</description>
 
     <properties>

@@ -1,7 +1,7 @@
 package com.health.service;
 
-import com.dto.PatientSearchCriteria;
-import com.dto.PatientSummaryDto;
+import com.health.dto.PatientSearchCriteria;
+import com.health.dto.PatientSummaryDto;
 import com.health.repo.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
