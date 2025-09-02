@@ -26,8 +26,6 @@ Exposing REST APIs (with Swagger) for easy integration.
 **Run locally:**
 `# Build
 mvn clean install
-
-# Run (uses H2 in dev mode)
 mvn spring-boot:run`
 
 **Swagger UI**
