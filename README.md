@@ -43,7 +43,6 @@ Example:
 
 `{ "name": "Age Based Request", "strategyKey": "ageBasedCohortStrategy", "diseaseCode": "string", "minAge": 0, "maxAge": 99 }`
 
-
 **Database Schema:** resources/data/Database-ER.png
 **Table Structure:** resources/data/DatabaseDesign.txt
 
