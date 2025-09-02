@@ -1,0 +1,44 @@
+Entities and Relationships
+
+
+====Patient======
+id (PK)
+mrn
+first_name, last_name
+gender, date_of_birth, etc.
+
+======Doctor=====
+id (PK)
+npi
+full_name, department_id
+
+======Visit=====
+id (PK)
+patient_id (FK → Patient.id)
+doctor_id (FK → Doctor.id)
+visit_time, visit_type, notes
+
+=====Diagnosis=======
+id (PK)
+code
+description
+
+=======VisitDiagnosis====== (Many-to-Many between Visit and Diagnosis)
+visit_id (PK, FK → Visit.id)
+diagnosis_id (PK, FK → Diagnosis.id)
+primary_flag
+
+=====PatientAgg========
+patient_id (PK, FK → Patient.id)
+visits_total, visits_last_365d
+first_visit_at, last_visit_at
+primary_diagnosis_top3 (JSON)
+doctors_recent_top3 (JSON)
+
+
+Key Points
+======================
+Patient → Visit is one-to-many
+Doctor → Visit is one-to-many
+Visit → Diagnosis is many-to-many via VisitDiagnosis
+Patient → PatientAgg is one-to-one
