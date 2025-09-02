@@ -2,17 +2,15 @@
 
 #### **Overview**
 
-This project implements a Healthcare Analytics Dashboard backend using Spring Boot (Java) and MySQL/H2. It allows healthcare institutions to query, filter, and analyze patient and operational data in real-time with minimal latency.
+This project implements a Healthcare Analytics Dashboard backend using Spring Boot (Java) and MySQL/H2. It allows healthcare
+institutions to query, filter, and analyze patient and operational data in real-time with minimal latency.
 
-Core features include:
+### Core features include:
 
-Querying patient records with insights like visits, diagnoses, and doctors.
-
-Defining and saving patient cohort selection sets.
-
-Aggregating statistics (PatientAgg) such as total visits, recent visits, and top diagnoses/doctors.
-
-Exposing REST APIs (with Swagger) for easy integration.
+* Querying patient records with insights like visits, diagnoses, and doctors.
+* Defining and saving patient cohort selection sets.
+* Aggregating statistics (PatientAgg) such as total visits, recent visits, and top diagnoses/doctors.
+* Exposing REST APIs (with Swagger) for easy integration.
 
 #### **Tech Stack**
 
@@ -25,7 +23,7 @@ Exposing REST APIs (with Swagger) for easy integration.
 
 **Run locally:**
 `# Build
-mvn clean install
+mvn clean install &
 mvn spring-boot:run`
 
 **Swagger UI**
