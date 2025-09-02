@@ -1,4 +1,4 @@
-# **Healthcare Analytics Dashboard (Backend)**
+# **Healthcare Analytics Dashboard APIs**
 
 #### **Overview**
 
