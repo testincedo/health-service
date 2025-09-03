@@ -1,12 +1,9 @@
 
 package com.health.repo;
 
-import com.health.domain.Diagnosis;
-import com.health.domain.Visit;
-import com.health.domain.VisitDiagnosis;
+import com.health.domain.*;
 import com.health.dto.PatientSummaryDto;
 import com.health.dto.PatientSearchCriteria;
-import com.health.domain.Patient;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
@@ -19,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
@@ -66,9 +64,18 @@ public class PatientSearchRepositoryImpl implements PatientSearchRepository {
 
         List<Patient> patients = em.createQuery(patientQuery).getResultList();
 
-        // Step 3: Map to DTO
+        // Step 3: Fetch PatientAgg
+        CriteriaQuery<PatientAgg> aggQuery = cb.createQuery(PatientAgg.class);
+        Root<PatientAgg> aggRoot = aggQuery.from(PatientAgg.class);
+        aggQuery.select(aggRoot)
+                .where(aggRoot.get("patientId").in(patientIds));
+        List<PatientAgg> aggs = em.createQuery(aggQuery).getResultList();
+        Map<Long, PatientAgg> aggMap = aggs.stream()
+                .collect(Collectors.toMap(PatientAgg::getPatientId, a -> a));
+
+        // Step 4: Map to DTOs
         List<PatientSummaryDto> items = patients.stream()
-                .map(p -> PatientSummaryDto.from(p, null))
+                .map(p -> PatientSummaryDto.from(p, aggMap.get(p.getId())))
                 .collect(Collectors.toList());
 
         return new PageImpl<>(items, pageable, patientIds.size());

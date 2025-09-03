@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
@@ -22,7 +23,7 @@ public class InsightsDto {
                 .visitsTotal(a.getVisitsTotal())
                 .visitsLast365d(a.getVisitsLast365d())
                 .lastVisitAt(a.getLastVisitAt())
-                .primaryDiagnosisTop3(null)
+                .primaryDiagnosisTop3(Collections.singletonList(a.getDoctorsRecentTop3()))
                 .build();
     }
 }
